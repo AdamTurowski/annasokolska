@@ -1,0 +1,2076 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Anna Sokólska — Łuczniczka Konna Światowej Klasy</title>
+  <meta name="description" content="Anna Sokólska — wielokrotna Mistrzyni Polski, Brązowa Medalistka Mistrzostw Świata i Europy w łucznictwie konnym. AMM Archery Team, Białystok, Podlaskie.">
+  <meta property="og:title" content="Anna Sokólska — Łuczniczka Konna Światowej Klasy">
+  <meta property="og:description" content="Szybkość. Precyzja. Tradycja. Od 2013 roku najlepsza łuczniczka konna — tam gdzie cwał konia spotyka lot strzały.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&family=Lora:ital,wght@0,400;1,400&family=Cormorant+Garamond:ital,wght@0,300;1,300&display=swap" rel="stylesheet">
+  <style>
+    /* =====================================================
+       CUSTOM PROPERTIES
+    ===================================================== */
+    :root {
+      --black:   #050507;
+      --deep:    #0c0b0e;
+      --gold:    #C8963E;
+      --gold-lt: #E8B84B;
+      --crimson: #6E1515;
+      --crimsn2: #A03030;
+      --white:   #F4EFE6;
+      --muted:   #8A7F6A;
+    }
+
+    /* =====================================================
+       RESET & BASE
+    ===================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'Lora', serif;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    /* =====================================================
+       NAV
+    ===================================================== */
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 200;
+      background: rgba(5, 5, 7, 0.97);
+      border-bottom: 1px solid rgba(200, 150, 62, 0.2);
+      transition: background 0.4s ease, box-shadow 0.4s ease;
+    }
+
+    .nav.scrolled {
+      background: rgba(5, 5, 7, 0.99);
+      box-shadow: 0 2px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .nav-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 0 80px;
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 40px;
+    }
+
+    .nav-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 22px;
+      color: var(--gold);
+      letter-spacing: 0.5px;
+      flex-shrink: 0;
+      transition: color 0.2s;
+    }
+
+    .nav-logo:hover {
+      color: var(--gold-lt);
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 36px;
+      list-style: none;
+    }
+
+    .nav-links a {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -3px;
+      left: 0;
+      width: 0;
+      height: 1px;
+      background: var(--gold);
+      transition: width 0.3s ease;
+    }
+
+    .nav-links a:hover {
+      color: var(--white);
+    }
+
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+
+    .nav-cta {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--gold);
+      padding: 12px 24px;
+      flex-shrink: 0;
+      transition: background 0.2s;
+    }
+
+    .nav-cta:hover {
+      background: var(--gold-lt);
+    }
+
+    /* =====================================================
+       HERO
+    ===================================================== */
+    .hero {
+      position: relative;
+      height: 820px;
+      overflow: hidden;
+      background: var(--black);
+    }
+
+    /* Background radial crimson glow */
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      background:
+        radial-gradient(ellipse 65% 85% at 85% 55%, rgba(110, 21, 21, 0.38) 0%, transparent 60%),
+        radial-gradient(ellipse 40% 50% at 100% 10%, rgba(160, 48, 48, 0.18) 0%, transparent 55%),
+        var(--black);
+    }
+
+    /* Speed lines */
+    .hero-speed-lines {
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: repeating-linear-gradient(
+        -12deg,
+        transparent,
+        transparent 21px,
+        rgba(200, 150, 62, 0.045) 21px,
+        rgba(200, 150, 62, 0.045) 22px
+      );
+    }
+
+    /* Vertical gold slash */
+    .hero-slash {
+      position: absolute;
+      right: 595px;
+      top: -10%;
+      width: 2px;
+      height: 120%;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        var(--gold) 25%,
+        var(--crimsn2) 70%,
+        transparent 100%
+      );
+      transform: rotate(-13deg);
+      transform-origin: center center;
+      z-index: 3;
+      opacity: 0.7;
+    }
+
+    /* Left content */
+    .hero-content {
+      position: relative;
+      z-index: 10;
+      padding: 80px 80px 160px;
+      max-width: 800px;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 18px;
+    }
+
+    .hero-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+    }
+
+    .eyebrow-line {
+      display: block;
+      width: 52px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .eyebrow-text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 10px;
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .hero-h1 {
+      display: flex;
+      flex-direction: column;
+      line-height: 1;
+      gap: 4px;
+    }
+
+    .hero-name-white {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 136px;
+      letter-spacing: -3px;
+      color: var(--white);
+      line-height: 0.9;
+      display: block;
+    }
+
+    .hero-name-gold {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 136px;
+      letter-spacing: -3px;
+      color: var(--gold);
+      line-height: 0.92;
+      display: block;
+    }
+
+    .hero-subtitle {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 12px;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .hero-desc {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 19px;
+      line-height: 1.65;
+      color: rgba(244, 239, 230, 0.65);
+      max-width: 540px;
+    }
+
+    .hero-cta-group {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    .btn-gold {
+      position: relative;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--black);
+      background: var(--gold);
+      padding: 16px 32px;
+      display: inline-block;
+      transition: background 0.2s;
+      overflow: visible;
+    }
+
+    .btn-gold::after {
+      content: '';
+      position: absolute;
+      inset: -1px;
+      border: 1px solid rgba(200, 150, 62, 0.6);
+      opacity: 0;
+      transition: opacity 0.25s, inset 0.25s;
+    }
+
+    .btn-gold:hover {
+      background: var(--gold-lt);
+    }
+
+    .btn-gold:hover::after {
+      opacity: 1;
+      inset: 5px;
+    }
+
+    .btn-outline {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--white);
+      border: 1px solid rgba(244, 239, 230, 0.25);
+      padding: 16px 32px;
+      display: inline-block;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .btn-outline:hover {
+      border-color: var(--gold);
+      color: var(--gold);
+    }
+
+    /* Right image */
+    .hero-image {
+      position: absolute;
+      right: 0;
+      top: 0;
+      width: 620px;
+      height: 100%;
+      z-index: 5;
+    }
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .hero-image-overlay {
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to right, var(--black) 0%, rgba(5, 5, 7, 0.6) 35%, rgba(5, 5, 7, 0.15) 65%, transparent 100%),
+        linear-gradient(to top, var(--black) 0%, rgba(5, 5, 7, 0.5) 20%, transparent 45%);
+    }
+
+    /* Shooting lane decoration at bottom of image */
+    .hero-track-line {
+      position: absolute;
+      bottom: 118px;
+      right: 0;
+      width: 620px;
+      height: 1px;
+      background: linear-gradient(to left, transparent, rgba(200, 150, 62, 0.3) 60%, transparent);
+      z-index: 6;
+    }
+
+    /* Stats bar */
+    .hero-stats {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      z-index: 15;
+      background: rgba(10, 8, 12, 0.97);
+      border-top: 1px solid rgba(200, 150, 62, 0.2);
+      display: flex;
+    }
+
+    .stat-cell {
+      flex: 1;
+      padding: 26px 44px;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      border-right: 1px solid rgba(200, 150, 62, 0.1);
+    }
+
+    .stat-cell:last-child {
+      border-right: none;
+    }
+
+    .stat-number {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 52px;
+      color: var(--gold);
+      line-height: 1;
+    }
+
+    .stat-label {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 9px;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    /* =====================================================
+       MARQUEE
+    ===================================================== */
+    .marquee-section {
+      background: var(--gold);
+      padding: 14px 0;
+      overflow: hidden;
+    }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee-scroll 25s linear infinite;
+    }
+
+    .marquee-content {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      padding-right: 0;
+      white-space: nowrap;
+    }
+
+    .marquee-item {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 10px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--black);
+      padding: 0 24px;
+    }
+
+    .marquee-dot {
+      display: inline-block;
+      width: 3px;
+      height: 3px;
+      border-radius: 50%;
+      background: var(--black);
+      opacity: 0.4;
+      flex-shrink: 0;
+    }
+
+    @keyframes marquee-scroll {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    /* =====================================================
+       O MNIE
+    ===================================================== */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+    }
+
+    /* Left visual column */
+    .about-visual {
+      position: relative;
+      background: linear-gradient(
+        140deg,
+        #3a0808 0%,
+        var(--crimson) 40%,
+        #1f0606 100%
+      );
+      clip-path: polygon(0 0, 93% 0, 100% 100%, 0 100%);
+      overflow: hidden;
+      padding: 80px 100px 80px 80px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      gap: 28px;
+      min-height: 680px;
+    }
+
+    .about-visual::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: repeating-linear-gradient(
+        -45deg,
+        transparent,
+        transparent 20px,
+        rgba(200, 150, 62, 0.025) 20px,
+        rgba(200, 150, 62, 0.025) 21px
+      );
+      pointer-events: none;
+    }
+
+    .about-circle-1 {
+      position: absolute;
+      top: -80px;
+      right: -80px;
+      width: 380px;
+      height: 380px;
+      border-radius: 50%;
+      border: 1px solid rgba(200, 150, 62, 0.12);
+    }
+
+    .about-circle-2 {
+      position: absolute;
+      top: -10px;
+      right: -10px;
+      width: 240px;
+      height: 240px;
+      border-radius: 50%;
+      border: 1px solid rgba(200, 150, 62, 0.1);
+    }
+
+    .about-quote-mark {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-size: 100px;
+      color: var(--gold);
+      opacity: 0.25;
+      line-height: 0.7;
+      position: relative;
+      z-index: 2;
+      user-select: none;
+    }
+
+    .about-quote {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 23px;
+      line-height: 1.55;
+      color: var(--white);
+      position: relative;
+      z-index: 2;
+      max-width: 380px;
+    }
+
+    .about-avatar {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      overflow: hidden;
+      border: 2px solid rgba(200, 150, 62, 0.5);
+      position: relative;
+      z-index: 2;
+      flex-shrink: 0;
+    }
+
+    .about-avatar img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    /* Right text column */
+    .about-text {
+      padding: 96px 80px;
+      background: var(--deep);
+      display: flex;
+      flex-direction: column;
+      gap: 28px;
+    }
+
+    .section-eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .section-eyebrow-line {
+      display: block;
+      width: 36px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+
+    .section-eyebrow-text {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 9px;
+      letter-spacing: 4px;
+      text-transform: uppercase;
+      color: var(--gold);
+    }
+
+    .about-h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 76px;
+      letter-spacing: -3px;
+      line-height: 0.88;
+      color: var(--white);
+    }
+
+    .about-paragraphs {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .about-paragraphs p {
+      font-family: 'Lora', serif;
+      font-size: 17px;
+      line-height: 1.82;
+      color: rgba(244, 239, 230, 0.65);
+    }
+
+    .about-arrow {
+      display: flex;
+      align-items: center;
+    }
+
+    .about-arrow-line {
+      width: 160px;
+      height: 1px;
+      background: linear-gradient(to right, var(--gold), transparent);
+    }
+
+    .about-arrow-head {
+      width: 0;
+      height: 0;
+      border-top: 4px solid transparent;
+      border-bottom: 4px solid transparent;
+      border-left: 8px solid var(--gold);
+      margin-left: -1px;
+    }
+
+    .about-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .tag {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      border: 1px solid rgba(200, 150, 62, 0.35);
+      padding: 8px 14px;
+      transition: background 0.2s, border-color 0.2s;
+      cursor: default;
+    }
+
+    .tag:hover {
+      background: rgba(200, 150, 62, 0.08);
+      border-color: var(--gold);
+    }
+
+    /* =====================================================
+       DYSCYPLINY
+    ===================================================== */
+    .disciplines {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      background: var(--black);
+    }
+
+    .discipline-card {
+      padding: 68px 44px;
+      border-right: 1px solid rgba(200, 150, 62, 0.1);
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+      cursor: default;
+    }
+
+    .discipline-card:last-child {
+      border-right: none;
+    }
+
+    .discipline-card:hover {
+      background: rgba(200, 150, 62, 0.03);
+    }
+
+    .discipline-number {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 88px;
+      color: rgba(200, 150, 62, 0.07);
+      line-height: 1;
+      margin-bottom: -24px;
+      user-select: none;
+    }
+
+    .discipline-name {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 12px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--white);
+      margin-bottom: 14px;
+      position: relative;
+    }
+
+    .discipline-desc {
+      font-family: 'Lora', serif;
+      font-size: 14px;
+      font-style: italic;
+      line-height: 1.75;
+      color: var(--muted);
+      position: relative;
+      margin-bottom: 60px;
+    }
+
+    .discipline-bar {
+      position: absolute;
+      bottom: 44px;
+      left: 44px;
+      height: 3px;
+      width: 0;
+      background: var(--gold);
+      transition: width 0.4s ease;
+    }
+
+    .discipline-card:hover .discipline-bar {
+      width: 48px;
+    }
+
+    /* =====================================================
+       OSIĄGNIĘCIA
+    ===================================================== */
+    .achievements {
+      padding: 96px 80px;
+      background: var(--deep);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .achievements-watermark {
+      position: absolute;
+      right: -20px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 240px;
+      color: rgba(200, 150, 62, 0.025);
+      letter-spacing: -6px;
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    .achievements-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      margin-bottom: 56px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .achievements-header-left {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    .achievements-h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 64px;
+      letter-spacing: -2px;
+      line-height: 0.92;
+      color: var(--white);
+    }
+
+    .achievements-header-right {
+      max-width: 300px;
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 16px;
+      line-height: 1.72;
+      color: rgba(244, 239, 230, 0.5);
+      padding-top: 16px;
+      align-self: flex-end;
+    }
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .achievement-card {
+      padding: 44px 40px;
+      background: rgba(12, 11, 14, 0.8);
+      border-top: 2px solid rgba(200, 150, 62, 0.15);
+      transition: border-top-color 0.3s, background 0.3s;
+      cursor: default;
+    }
+
+    .achievement-card:hover {
+      border-top-color: var(--gold);
+      background: rgba(200, 150, 62, 0.04);
+    }
+
+    .achievement-card.featured {
+      border-top-color: var(--gold);
+      background: rgba(200, 150, 62, 0.05);
+    }
+
+    .achievement-medal {
+      font-size: 26px;
+      margin-bottom: 14px;
+      display: block;
+    }
+
+    .achievement-year {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .achievement-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      color: var(--white);
+      margin-bottom: 8px;
+      line-height: 1.45;
+    }
+
+    .achievement-detail {
+      font-family: 'Lora', serif;
+      font-size: 13px;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    /* =====================================================
+       REKORD STARTU
+    ===================================================== */
+    .track-record {
+      padding: 96px 80px;
+      background: var(--black);
+      display: grid;
+      grid-template-columns: 360px 1fr;
+      gap: 80px;
+      align-items: start;
+    }
+
+    .track-intro {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .track-h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 56px;
+      letter-spacing: -2px;
+      line-height: 0.9;
+      color: var(--white);
+    }
+
+    .track-desc {
+      font-family: 'Lora', serif;
+      font-size: 16px;
+      font-style: italic;
+      line-height: 1.75;
+      color: rgba(244, 239, 230, 0.6);
+    }
+
+    .track-image img {
+      width: 280px;
+      height: 320px;
+      object-fit: cover;
+      margin-top: 8px;
+    }
+
+    .track-list {
+      display: flex;
+      flex-direction: column;
+      padding-top: 8px;
+    }
+
+    .track-row {
+      display: grid;
+      grid-template-columns: 80px 1fr 100px;
+      align-items: center;
+      padding: 22px 0;
+      border-bottom: 1px solid rgba(200, 150, 62, 0.09);
+      gap: 20px;
+      transition: background 0.2s;
+    }
+
+    .track-row:first-child {
+      border-top: 1px solid rgba(200, 150, 62, 0.09);
+    }
+
+    .track-row:hover {
+      background: rgba(200, 150, 62, 0.02);
+      padding-left: 8px;
+    }
+
+    .track-position {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 46px;
+      line-height: 1;
+    }
+
+    .track-position.gold   { color: var(--gold); }
+    .track-position.silver { color: #B0B8C4; }
+    .track-position.bronze { color: #C07840; }
+
+    .track-event-name {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 13px;
+      color: var(--white);
+      margin-bottom: 4px;
+    }
+
+    .track-event-location {
+      font-family: 'Lora', serif;
+      font-size: 12px;
+      font-style: italic;
+      color: var(--muted);
+    }
+
+    .track-year {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 9px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--muted);
+      text-align: right;
+    }
+
+    /* =====================================================
+       GALERIA
+    ===================================================== */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 360px;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .gallery-overlay {
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 5, 7, 0.72);
+      display: flex;
+      align-items: flex-end;
+      padding: 28px;
+      opacity: 0;
+      transition: opacity 0.35s ease;
+    }
+
+    .gallery-item:hover .gallery-overlay {
+      opacity: 1;
+    }
+
+    .gallery-caption {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--white);
+      border-left: 2px solid var(--gold);
+      padding-left: 12px;
+    }
+
+    /* =====================================================
+       CTA BANNER
+    ===================================================== */
+    .cta-banner {
+      padding: 110px 80px;
+      background: var(--crimson);
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 60px;
+    }
+
+    .cta-deco {
+      position: absolute;
+      right: -80px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 520px;
+      color: rgba(255, 255, 255, 0.03);
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      pointer-events: none;
+      user-select: none;
+      line-height: 1;
+    }
+
+    .cta-left {
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta-h2 {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 900;
+      font-size: 88px;
+      letter-spacing: -4px;
+      line-height: 0.88;
+      color: var(--white);
+    }
+
+    .cta-subtitle {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 18px;
+      line-height: 1.65;
+      color: rgba(244, 239, 230, 0.75);
+      max-width: 460px;
+    }
+
+    .btn-cta {
+      position: relative;
+      z-index: 2;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: var(--crimson);
+      background: var(--white);
+      padding: 20px 44px;
+      display: inline-block;
+      transition: background 0.2s, color 0.2s;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .btn-cta:hover {
+      background: var(--gold-lt);
+      color: var(--black);
+    }
+
+    /* =====================================================
+       FOOTER
+    ===================================================== */
+    footer {
+      padding: 64px 80px;
+      background: var(--black);
+      border-top: 1px solid rgba(200, 150, 62, 0.18);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.3fr 1fr 1fr 1.2fr;
+      gap: 60px;
+      margin-bottom: 48px;
+      max-width: 1440px;
+    }
+
+    .footer-logo {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 300;
+      font-style: italic;
+      font-size: 22px;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+
+    .footer-tagline {
+      font-family: 'Lora', serif;
+      font-style: italic;
+      font-size: 14px;
+      line-height: 1.75;
+      color: rgba(244, 239, 230, 0.4);
+    }
+
+    .footer-col-title {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 700;
+      font-size: 9px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      list-style: none;
+    }
+
+    .footer-links li a {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 13px;
+      color: rgba(244, 239, 230, 0.5);
+      transition: color 0.2s;
+    }
+
+    .footer-links li a:hover {
+      color: var(--gold);
+    }
+
+    .footer-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding-top: 32px;
+      border-top: 1px solid rgba(200, 150, 62, 0.1);
+      max-width: 1440px;
+    }
+
+    .footer-copy {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 300;
+      font-size: 11px;
+      letter-spacing: 1px;
+      color: rgba(244, 239, 230, 0.28);
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 28px;
+    }
+
+    .footer-social a {
+      font-family: 'Poppins', sans-serif;
+      font-weight: 500;
+      font-size: 9px;
+      letter-spacing: 2.5px;
+      text-transform: uppercase;
+      color: rgba(244, 239, 230, 0.35);
+      transition: color 0.2s;
+    }
+
+    .footer-social a:hover {
+      color: var(--gold);
+    }
+
+    /* =====================================================
+       RESPONSIVE
+    ===================================================== */
+    @media (max-width: 1280px) {
+      .hero-name-white,
+      .hero-name-gold {
+        font-size: 108px;
+      }
+
+      .hero-image {
+        width: 520px;
+      }
+
+      .hero-slash {
+        right: 495px;
+      }
+    }
+
+    @media (max-width: 1100px) {
+      .nav-inner {
+        padding: 0 40px;
+      }
+
+      .nav-links {
+        gap: 24px;
+      }
+
+      .hero-content {
+        padding: 60px 40px 160px;
+      }
+
+      .hero-name-white,
+      .hero-name-gold {
+        font-size: 86px;
+      }
+
+      .hero-image {
+        width: 420px;
+      }
+
+      .hero-slash {
+        right: 395px;
+      }
+
+      .about-h2 {
+        font-size: 60px;
+      }
+
+      .disciplines {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .discipline-card:nth-child(2) {
+        border-right: none;
+      }
+
+      .discipline-card:nth-child(3) {
+        border-top: 1px solid rgba(200, 150, 62, 0.1);
+      }
+
+      .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .track-record {
+        grid-template-columns: 1fr;
+        gap: 48px;
+      }
+
+      .cta-h2 {
+        font-size: 64px;
+      }
+
+      .footer-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 40px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .nav-inner {
+        padding: 0 24px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+
+      .hero {
+        height: auto;
+        min-height: 100svh;
+        padding-bottom: 0;
+      }
+
+      .hero-content {
+        padding: 100px 24px 180px;
+        max-width: 100%;
+      }
+
+      .hero-name-white,
+      .hero-name-gold {
+        font-size: 62px;
+        letter-spacing: -2px;
+      }
+
+      .hero-image {
+        width: 100%;
+        height: 100%;
+        opacity: 0.25;
+      }
+
+      .hero-slash {
+        display: none;
+      }
+
+      .hero-stats {
+        flex-wrap: wrap;
+        position: relative;
+      }
+
+      .stat-cell {
+        flex: 0 0 50%;
+        padding: 18px 24px;
+      }
+
+      .stat-number {
+        font-size: 40px;
+      }
+
+      .about {
+        grid-template-columns: 1fr;
+      }
+
+      .about-visual {
+        clip-path: none;
+        min-height: 400px;
+        padding: 60px 24px;
+      }
+
+      .about-text {
+        padding: 60px 24px;
+      }
+
+      .about-h2 {
+        font-size: 52px;
+      }
+
+      .disciplines {
+        grid-template-columns: 1fr;
+      }
+
+      .discipline-card {
+        border-right: none;
+        border-bottom: 1px solid rgba(200, 150, 62, 0.1);
+      }
+
+      .achievements {
+        padding: 60px 24px;
+      }
+
+      .achievements-header {
+        flex-direction: column;
+        gap: 16px;
+      }
+
+      .achievements-h2 {
+        font-size: 48px;
+      }
+
+      .achievements-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .track-record {
+        padding: 60px 24px;
+      }
+
+      .track-h2 {
+        font-size: 44px;
+      }
+
+      .gallery {
+        grid-template-columns: 1fr;
+      }
+
+      .cta-banner {
+        padding: 80px 24px;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 36px;
+      }
+
+      .cta-h2 {
+        font-size: 52px;
+        letter-spacing: -2px;
+      }
+
+      footer {
+        padding: 48px 24px;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        gap: 16px;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ===================================================
+       NAV
+  =================================================== -->
+  <header class="nav" id="main-nav" role="banner">
+    <div class="nav-inner">
+      <a href="#" class="nav-logo" aria-label="Anna Sokólska — strona główna">Anna Sokólska</a>
+      <nav aria-label="Nawigacja główna">
+        <ul class="nav-links">
+          <li><a href="#o-mnie">O mnie</a></li>
+          <li><a href="#osiagniecia">Osiągnięcia</a></li>
+          <li><a href="#pokazy">Pokazy</a></li>
+          <li><a href="#rekord">Szkolenia</a></li>
+          <li><a href="#kontakt">Kontakt</a></li>
+        </ul>
+      </nav>
+      <a href="#kontakt" class="nav-cta">Zarezerwuj Pokaz</a>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===================================================
+         HERO
+    =================================================== -->
+    <section class="hero" id="hero" aria-label="Sekcja główna — Anna Sokólska">
+      <div class="hero-bg" aria-hidden="true"></div>
+      <div class="hero-speed-lines" aria-hidden="true"></div>
+      <div class="hero-slash" aria-hidden="true"></div>
+
+      <div class="hero-content">
+        <div class="hero-eyebrow">
+          <span class="eyebrow-line" aria-hidden="true"></span>
+          <span class="eyebrow-text">Łuczniczka Konna Światowej Klasy · AMM Archery</span>
+        </div>
+
+        <h1 class="hero-h1">
+          <span class="hero-name-white">ANNA</span>
+          <span class="hero-name-gold">SOKÓLSKA</span>
+        </h1>
+
+        <p class="hero-subtitle">Mistrzyni Polski · Brązowa Medalistka Świata · Puchar Europy · Podlaskie</p>
+
+        <p class="hero-desc">Szybkość. Precyzja. Tradycja. Od 2013 roku najlepsza łuczniczka konna na świecie mknie naprzód — tam gdzie cwał konia spotyka lot strzały.</p>
+
+        <div class="hero-cta-group">
+          <a href="#o-mnie" class="btn-gold">Poznaj Jej Historię</a>
+          <a href="#galeria" class="btn-outline" id="btn-video">Oglądaj w akcji</a>
+        </div>
+      </div>
+
+      <div class="hero-image" aria-hidden="true">
+        <img
+          src="https://placehold.co/620x820/1a0808/C8963E?text=Anna+Sokolska"
+          alt="Anna Sokólska — łuczniczka konna, wielokrotna mistrzyni Polski"
+        >
+        <div class="hero-image-overlay"></div>
+      </div>
+      <div class="hero-track-line" aria-hidden="true"></div>
+
+      <div class="hero-stats" role="list" aria-label="Statystyki kariery">
+        <div class="stat-cell" role="listitem">
+          <span class="stat-number">19</span>
+          <span class="stat-label">Medali w 2017 roku</span>
+        </div>
+        <div class="stat-cell" role="listitem">
+          <span class="stat-number">11</span>
+          <span class="stat-label">Złotych medali · jeden sezon</span>
+        </div>
+        <div class="stat-cell" role="listitem">
+          <span class="stat-number">2×</span>
+          <span class="stat-label">Mistrzyni Polski</span>
+        </div>
+        <div class="stat-cell" role="listitem">
+          <span class="stat-number">10+</span>
+          <span class="stat-label">Lat na scenie światowej</span>
+        </div>
+        <div class="stat-cell" role="listitem">
+          <span class="stat-number">7</span>
+          <span class="stat-label">Podbitych krajów w&nbsp;'17</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         MARQUEE
+    =================================================== -->
+    <div class="marquee-section" aria-label="Tytuły i osiągnięcia — pasek informacyjny">
+      <div class="marquee-track" role="marquee">
+        <!-- Block 1 -->
+        <div class="marquee-content" aria-hidden="false">
+          <span class="marquee-item">Mistrzyni Polski 2020</span><span class="marquee-dot"></span>
+          <span class="marquee-item">Mistrzyni Polski 2021</span><span class="marquee-dot"></span>
+          <span class="marquee-item">Brązowa Medalistka Świata</span><span class="marquee-dot"></span>
+          <span class="marquee-item">Iran 2021</span><span class="marquee-dot"></span>
+          <span class="marquee-item">Brąz Mistrzostw Europy</span><span class="marquee-dot"></span>
+          <span class="marquee-item">Francja 2022</span><span class="marquee-dot"></span>
+          <span class="marquee-item">Puchar Polski 2015</span><span class="marquee-dot"></span>
+          <span class="marquee-item">Puchar Europy — Drużyna</span><span class="marquee-dot"></span>
+          <span class="marquee-item">Rekord Polski Tower90 · 2020</span><span class="marquee-dot"></span>
+          <span class="marquee-item">#1 Łuczniczka Konna Kobiet na Świecie</span><span class="marquee-dot"></span>
+        </div>
+        <!-- Block 2 — duplicate for seamless loop -->
+        <div class="marquee-content" aria-hidden="true">
+          <span class="marquee-item">Mistrzyni Polski 2020</span><span class="marquee-dot"></span>
+          <span class="marquee-item">Mistrzyni Polski 2021</span><span class="marquee-dot"></span>
+          <span class="marquee-item">Brązowa Medalistka Świata</span><span class="marquee-dot"></span>
+          <span class="marquee-item">Iran 2021</span><span class="marquee-dot"></span>
+          <span class="marquee-item">Brąz Mistrzostw Europy</span><span class="marquee-dot"></span>
+          <span class="marquee-item">Francja 2022</span><span class="marquee-dot"></span>
+          <span class="marquee-item">Puchar Polski 2015</span><span class="marquee-dot"></span>
+          <span class="marquee-item">Puchar Europy — Drużyna</span><span class="marquee-dot"></span>
+          <span class="marquee-item">Rekord Polski Tower90 · 2020</span><span class="marquee-dot"></span>
+          <span class="marquee-item">#1 Łuczniczka Konna Kobiet na Świecie</span><span class="marquee-dot"></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ===================================================
+         O MNIE
+    =================================================== -->
+    <section class="about" id="o-mnie" aria-labelledby="about-heading">
+      <div class="about-visual">
+        <div class="about-circle-1" aria-hidden="true"></div>
+        <div class="about-circle-2" aria-hidden="true"></div>
+        <span class="about-quote-mark" aria-hidden="true">"</span>
+        <blockquote class="about-quote">
+          Zaufanie i przyjaźń z konia zrodziły się moje dotychczasowe sukcesy sportowe.
+        </blockquote>
+        <div class="about-avatar">
+          <img
+            src="https://placehold.co/160x160/2a0a0a/C8963E?text=AS"
+            alt="Anna Sokólska — zdjęcie portretowe"
+            width="80"
+            height="80"
+          >
+        </div>
+      </div>
+
+      <div class="about-text">
+        <div class="section-eyebrow">
+          <span class="section-eyebrow-line" aria-hidden="true"></span>
+          <span class="section-eyebrow-text">Jej Historia</span>
+        </div>
+
+        <h2 class="about-h2" id="about-heading">
+          PRECYZJA<br>W<br>RUCHU
+        </h2>
+
+        <div class="about-paragraphs">
+          <p>Z Białegostoku na największe areny świata — Anna Sokólska po raz pierwszy odkryła łucznictwo konne w 2007 roku w Technikum Hodowli Koni w Supraślu i już nigdy się nie zatrzymała.</p>
+          <p>Znana jako »SzatAnka« za swoją niestrudzoną energię, stała się twarzą tej starożytnej dyscypliny w Europie — startując w Japonii, Iranie, Korei, Turcji, na Węgrzech i w Rosji.</p>
+          <p>W 2020 roku ustanowiła rekord Polski w konkurencji Tower90, który do dziś pozostaje niepobity. Jej koń Czanar jest najlepszym partnerem na torze.</p>
+        </div>
+
+        <div class="about-arrow" aria-hidden="true">
+          <span class="about-arrow-line"></span>
+          <span class="about-arrow-head"></span>
+        </div>
+
+        <div class="about-tags" role="list" aria-label="Dyscypliny i przynależność">
+          <span class="tag" role="listitem">Styl Węgierski</span>
+          <span class="tag" role="listitem">Styl Koreański</span>
+          <span class="tag" role="listitem">Tower90</span>
+          <span class="tag" role="listitem">Tor Polski</span>
+          <span class="tag" role="listitem">AMM Archery</span>
+          <span class="tag" role="listitem">Podlaskie · Białystok</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         DYSCYPLINY
+    =================================================== -->
+    <section class="disciplines" id="pokazy" aria-labelledby="disciplines-heading">
+      <div class="sr-only">
+        <h2 id="disciplines-heading">Dyscypliny łucznictwa konnego</h2>
+      </div>
+
+      <article class="discipline-card">
+        <div class="discipline-number" aria-hidden="true">01</div>
+        <h3 class="discipline-name">Styl Węgierski</h3>
+        <p class="discipline-desc">Pełny galop. Tarcze po lewej i prawej. Szybkość, zwinność i wybuchowa precyzja.</p>
+        <div class="discipline-bar" aria-hidden="true"></div>
+      </article>
+
+      <article class="discipline-card">
+        <div class="discipline-number" aria-hidden="true">02</div>
+        <h3 class="discipline-name">Styl Koreański</h3>
+        <p class="discipline-desc">Odległe cele. Dyscyplina czystej celności strzeleckiej na poruszającym się koniu.</p>
+        <div class="discipline-bar" aria-hidden="true"></div>
+      </article>
+
+      <article class="discipline-card">
+        <div class="discipline-number" aria-hidden="true">03</div>
+        <h3 class="discipline-name">Tower90</h3>
+        <p class="discipline-desc">Rekordzistka Polski. Pionowa precyzja połączona z mistrzostwem pełnego galopu.</p>
+        <div class="discipline-bar" aria-hidden="true"></div>
+      </article>
+
+      <article class="discipline-card">
+        <div class="discipline-number" aria-hidden="true">04</div>
+        <h3 class="discipline-name">Tor Polski</h3>
+        <p class="discipline-desc">Mistrzyni dyscypliny. Tradycja spleciona z nowoczesnym formatem zawodów.</p>
+        <div class="discipline-bar" aria-hidden="true"></div>
+      </article>
+    </section>
+
+    <!-- ===================================================
+         OSIĄGNIĘCIA
+    =================================================== -->
+    <section class="achievements" id="osiagniecia" aria-labelledby="achievements-heading">
+      <div class="achievements-watermark" aria-hidden="true">CHAMPION</div>
+
+      <div class="achievements-header">
+        <div class="achievements-header-left">
+          <div class="section-eyebrow">
+            <span class="section-eyebrow-line" aria-hidden="true"></span>
+            <span class="section-eyebrow-text">Gabinet Trofeów</span>
+          </div>
+          <h2 class="achievements-h2" id="achievements-heading">
+            TYTUŁY<br>I ZWYCIĘSTWA
+          </h2>
+        </div>
+        <p class="achievements-header-right">
+          Od Grunwaldu po Iran, od Kolonii po Kijów — medale Anny obiegają glob.
+        </p>
+      </div>
+
+      <div class="achievements-grid">
+        <article class="achievement-card featured">
+          <span class="achievement-medal" aria-label="Trofeum">🏆</span>
+          <div class="achievement-year">2020 i 2021</div>
+          <h3 class="achievement-title">Mistrzyni Polski w Łucznictwie Konnym</h3>
+          <p class="achievement-detail">Obrona tytułu · Grunwald, Polska</p>
+        </article>
+
+        <article class="achievement-card">
+          <span class="achievement-medal" aria-label="Brązowy medal">🥉</span>
+          <div class="achievement-year">2021</div>
+          <h3 class="achievement-title">Brązowy Medal Mistrzostw Świata</h3>
+          <p class="achievement-detail">Karadż, Iran — indywidualnie</p>
+        </article>
+
+        <article class="achievement-card">
+          <span class="achievement-medal" aria-label="Brązowy medal">🥉</span>
+          <div class="achievement-year">2022</div>
+          <h3 class="achievement-title">Brązowy Medal Mistrzostw Europy</h3>
+          <p class="achievement-detail">Mistrzostwa IHAA · Francja</p>
+        </article>
+
+        <article class="achievement-card">
+          <span class="achievement-medal" aria-label="Złoty medal">🥇</span>
+          <div class="achievement-year">2019 · 2020 · 2021</div>
+          <h3 class="achievement-title">Mistrzyni Pucharu Europy — Drużyna</h3>
+          <p class="achievement-detail">Wiele sezonów dominacji</p>
+        </article>
+
+        <article class="achievement-card">
+          <span class="achievement-medal" aria-label="Rekord">📍</span>
+          <div class="achievement-year">2020</div>
+          <h3 class="achievement-title">Rekord Polski — Tower90</h3>
+          <p class="achievement-detail">Niepobity do dziś · Białystok, Polska</p>
+        </article>
+
+        <article class="achievement-card">
+          <span class="achievement-medal" aria-label="Glob">🌍</span>
+          <div class="achievement-year">2017</div>
+          <h3 class="achievement-title">19 Medali · 11 Złotych · 7 Krajów</h3>
+          <p class="achievement-detail">Japonia, Iran, Rosja, Turcja i inne</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         REKORD STARTU
+    =================================================== -->
+    <section class="track-record" id="rekord" aria-labelledby="track-heading">
+      <div class="track-intro">
+        <div class="section-eyebrow">
+          <span class="section-eyebrow-line" aria-hidden="true"></span>
+          <span class="section-eyebrow-text">Historia startów</span>
+        </div>
+        <h2 class="track-h2" id="track-heading">
+          REKORD<br>STARTU
+        </h2>
+        <p class="track-desc">Wyniki, które mówią same za siebie — podium za podium, kraj za krajem.</p>
+        <div class="track-image">
+          <img
+            src="https://placehold.co/280x320/0c0b0e/C8963E?text=Zawody"
+            alt="Anna Sokólska na zawodach łucznictwa konnego"
+            width="280"
+            height="320"
+          >
+        </div>
+      </div>
+
+      <div class="track-list" role="list" aria-label="Lista wyników zawodów">
+        <div class="track-row" role="listitem">
+          <span class="track-position gold" aria-label="Pierwsze miejsce">1st</span>
+          <div>
+            <div class="track-event-name">Mistrzostwa Polski</div>
+            <div class="track-event-location">Grunwald, Polska</div>
+          </div>
+          <span class="track-year">2021</span>
+        </div>
+
+        <div class="track-row" role="listitem">
+          <span class="track-position bronze" aria-label="Trzecie miejsce">3rd</span>
+          <div>
+            <div class="track-event-name">Mistrzostwa Świata Łucznictwa Konnego</div>
+            <div class="track-event-location">Karadż, Iran</div>
+          </div>
+          <span class="track-year">2021</span>
+        </div>
+
+        <div class="track-row" role="listitem">
+          <span class="track-position gold" aria-label="Pierwsze miejsce">1st</span>
+          <div>
+            <div class="track-event-name">World Grand Prix — Drużyna</div>
+            <div class="track-event-location">Scena Międzynarodowa</div>
+          </div>
+          <span class="track-year">2020</span>
+        </div>
+
+        <div class="track-row" role="listitem">
+          <span class="track-position gold" aria-label="Pierwsze miejsce">1st</span>
+          <div>
+            <div class="track-event-name">Rekord Polski Tower90</div>
+            <div class="track-event-location">Białystok, Polska</div>
+          </div>
+          <span class="track-year">2020</span>
+        </div>
+
+        <div class="track-row" role="listitem">
+          <span class="track-position gold" aria-label="Pierwsze miejsce">1st</span>
+          <div>
+            <div class="track-event-name">Puchar Europy — Drużyna</div>
+            <div class="track-event-location">Tatry, Francja</div>
+          </div>
+          <span class="track-year">2019</span>
+        </div>
+
+        <div class="track-row" role="listitem">
+          <span class="track-position silver" aria-label="Drugie miejsce">2nd</span>
+          <div>
+            <div class="track-event-name">Puchar Europy — Indywidualnie</div>
+            <div class="track-event-location">Tatry, Francja</div>
+          </div>
+          <span class="track-year">2019</span>
+        </div>
+
+        <div class="track-row" role="listitem">
+          <span class="track-position gold" aria-label="Pierwsze miejsce">1st</span>
+          <div>
+            <div class="track-event-name">Łucznictwo Konne — Styl Koreański</div>
+            <div class="track-event-location">Kolonia, Niemcy</div>
+          </div>
+          <span class="track-year">2018</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         GALERIA
+    =================================================== -->
+    <section class="gallery" id="galeria" aria-label="Galeria zdjęć">
+      <div class="gallery-item">
+        <img
+          src="https://placehold.co/480x360/1a0808/C8963E?text=Zawody+Grunwald"
+          alt="Anna Sokólska podczas zawodów w Grunwaldzie — Mistrzostwa Polski w łucznictwie konnym"
+          width="480"
+          height="360"
+        >
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="gallery-caption">Zawody · Grunwald</span>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="https://placehold.co/480x360/0a1a08/C8963E?text=Pokaz+Japonia"
+          alt="Anna Sokólska podczas pokazu w Japonii — łucznictwo konne na arenie międzynarodowej"
+          width="480"
+          height="360"
+        >
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="gallery-caption">Pokaz · Japonia</span>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img
+          src="https://placehold.co/480x360/08081a/C8963E?text=Trening+Podlaskie"
+          alt="Anna Sokólska podczas treningu w Podlaskiem — codzienna praca z koniem"
+          width="480"
+          height="360"
+        >
+        <div class="gallery-overlay" aria-hidden="true">
+          <span class="gallery-caption">Trening · Podlaskie</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================================================
+         CTA BANNER
+    =================================================== -->
+    <section class="cta-banner" id="kontakt" aria-labelledby="cta-heading">
+      <span class="cta-deco" aria-hidden="true">◈</span>
+
+      <div class="cta-left">
+        <h2 class="cta-h2" id="cta-heading">
+          POCZUJ<br>SZTUKĘ<br>ŁUCZNICZKI
+        </h2>
+        <p class="cta-subtitle">
+          Zarezerwuj Annę na pokaz, warsztaty lub demonstrację — niezapomniane przeżycie.
+        </p>
+      </div>
+
+      <a href="mailto:kontakt@annasokolska.pl" class="btn-cta">
+        Kontakt i Rezerwacja
+      </a>
+    </section>
+
+  </main>
+
+  <!-- ===================================================
+       FOOTER
+  =================================================== -->
+  <footer role="contentinfo">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">Anna Sokólska</div>
+        <p class="footer-tagline">
+          Tam gdzie cwał konia<br>spotyka lot strzały.
+        </p>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Nawigacja</div>
+        <ul class="footer-links">
+          <li><a href="#o-mnie">O Annie</a></li>
+          <li><a href="#osiagniecia">Osiągnięcia</a></li>
+          <li><a href="#pokazy">Pokazy i Zawody</a></li>
+          <li><a href="#rekord">Szkolenia</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Dyscypliny</div>
+        <ul class="footer-links">
+          <li><a href="#pokazy">Styl Węgierski</a></li>
+          <li><a href="#pokazy">Styl Koreański</a></li>
+          <li><a href="#pokazy">Tower90</a></li>
+          <li><a href="#pokazy">Tor Polski</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <div class="footer-col-title">Kontakt</div>
+        <ul class="footer-links">
+          <li><a href="#">annasokolska.pl</a></li>
+          <li><a href="#">AMM Archery Team</a></li>
+          <li><a href="#">Białystok, Polska</a></li>
+          <li><a href="#kontakt">Zarezerwuj Pokaz</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <span class="footer-copy">© 2024 Anna Sokólska · Wszelkie Prawa Zastrzeżone</span>
+      <nav class="footer-social" aria-label="Media społecznościowe">
+        <a href="#" aria-label="Instagram Anny Sokólskiej">Instagram</a>
+        <a href="#" aria-label="YouTube Anny Sokólskiej">YouTube</a>
+        <a href="#" aria-label="Facebook Anny Sokólskiej">Facebook</a>
+        <a href="#" aria-label="Patronite Anny Sokólskiej">Patronite</a>
+      </nav>
+    </div>
+  </footer>
+
+  <!-- Visually hidden helper class -->
+  <style>
+    .sr-only {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0,0,0,0);
+      white-space: nowrap;
+      border: 0;
+    }
+  </style>
+
+  <script>
+    // Nav scroll state
+    (function () {
+      const nav = document.getElementById('main-nav');
+      let lastY = 0;
+
+      const onScroll = () => {
+        const y = window.scrollY;
+        if (y > 60) {
+          nav.classList.add('scrolled');
+        } else {
+          nav.classList.remove('scrolled');
+        }
+        lastY = y;
+      };
+
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+
+    // Pause marquee on hover (accessibility)
+    (function () {
+      const track = document.querySelector('.marquee-track');
+      if (!track) return;
+      const section = track.closest('.marquee-section');
+      if (!section) return;
+
+      section.addEventListener('mouseenter', () => {
+        track.style.animationPlayState = 'paused';
+      });
+      section.addEventListener('mouseleave', () => {
+        track.style.animationPlayState = 'running';
+      });
+    })();
+  </script>
+
+
+  <!-- ===================================================
+       VIDEO MODAL
+  =================================================== -->
+  <div class="video-modal" id="video-modal" role="dialog" aria-modal="true" aria-label="Wideo — Anna Sokólska w akcji">
+    <div class="video-modal-backdrop" id="video-modal-backdrop"></div>
+    <div class="video-modal-box">
+      <button class="video-modal-close" id="video-modal-close" aria-label="Zamknij wideo">&#x2715;</button>
+      <div class="video-modal-frame">
+        <iframe
+          id="video-modal-iframe"
+          src=""
+          title="Anna Sokólska — łuczniczka konna w akcji"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          allowfullscreen
+        ></iframe>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    .video-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: 500;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .video-modal.is-open {
+      display: flex;
+    }
+
+    .video-modal-backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(5, 5, 7, 0.92);
+      cursor: pointer;
+    }
+
+    .video-modal-box {
+      position: relative;
+      z-index: 501;
+      width: 90%;
+      max-width: 960px;
+      aspect-ratio: 16 / 9;
+      background: var(--black);
+      border: 1px solid rgba(200, 150, 62, 0.25);
+      box-shadow: 0 0 100px rgba(0, 0, 0, 0.85), 0 0 40px rgba(110, 21, 21, 0.25);
+    }
+
+    .video-modal-close {
+      position: absolute;
+      top: -44px;
+      right: 0;
+      width: 36px;
+      height: 36px;
+      background: transparent;
+      border: 1px solid rgba(244, 239, 230, 0.25);
+      color: var(--white);
+      font-family: 'Poppins', sans-serif;
+      font-size: 16px;
+      line-height: 1;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: border-color 0.2s, color 0.2s;
+    }
+
+    .video-modal-close:hover,
+    .video-modal-close:focus-visible {
+      border-color: var(--gold);
+      color: var(--gold);
+      outline: none;
+    }
+
+    .video-modal-frame {
+      width: 100%;
+      height: 100%;
+    }
+
+    .video-modal-frame iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }
+  </style>
+
+  <script>
+    // YouTube video modal
+    (function () {
+      const EMBED_SRC = 'https://www.youtube.com/embed/cL23J50Fo7E?autoplay=1';
+
+      const modal    = document.getElementById('video-modal');
+      const backdrop = document.getElementById('video-modal-backdrop');
+      const closeBtn = document.getElementById('video-modal-close');
+      const iframe   = document.getElementById('video-modal-iframe');
+      const trigger  = document.getElementById('btn-video');
+
+      if (!modal || !trigger) return;
+
+      function openModal(e) {
+        e.preventDefault();
+        iframe.src = EMBED_SRC;
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+
+      function closeModal() {
+        modal.classList.remove('is-open');
+        // Reset src to stop video playback immediately
+        iframe.src = '';
+        document.body.style.overflow = '';
+      }
+
+      trigger.addEventListener('click', openModal);
+      backdrop.addEventListener('click', closeModal);
+      closeBtn.addEventListener('click', closeModal);
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+          closeModal();
+        }
+      });
+    })();
+  </script>
+
+</body>
+</html>
