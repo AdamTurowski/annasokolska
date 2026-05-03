@@ -154,6 +154,49 @@
       background: var(--gold-lt);
     }
 
+    /* Hamburger — hidden on desktop, shown on mobile */
+    .nav-hamburger {
+      display: none;
+      flex-direction: column;
+      justify-content: center;
+      gap: 5px;
+      width: 36px;
+      height: 36px;
+      padding: 7px;
+      background: transparent;
+      border: 1px solid rgba(244, 239, 230, 0.2);
+      cursor: pointer;
+      flex-shrink: 0;
+      transition: border-color 0.2s;
+    }
+
+    .nav-hamburger:hover {
+      border-color: rgba(200, 150, 62, 0.5);
+    }
+
+    .nav-hamburger-bar {
+      display: block;
+      width: 100%;
+      height: 1px;
+      background: var(--white);
+      transition: transform 0.25s ease, opacity 0.25s ease;
+    }
+
+    .nav-hamburger.is-open .nav-hamburger-bar:nth-child(1) {
+      transform: translateY(6px) rotate(45deg);
+    }
+    .nav-hamburger.is-open .nav-hamburger-bar:nth-child(2) {
+      opacity: 0;
+    }
+    .nav-hamburger.is-open .nav-hamburger-bar:nth-child(3) {
+      transform: translateY(-6px) rotate(-45deg);
+    }
+
+    /* Mobile-only CTA duplicate — hidden on desktop */
+    .nav-mobile-cta-item {
+      display: none;
+    }
+
     /* =====================================================
        HERO
     ===================================================== */
@@ -1279,8 +1322,47 @@
         padding: 0 24px;
       }
 
+      /* Show hamburger, hide desktop CTA */
+      .nav-hamburger {
+        display: flex;
+      }
+
+      .nav-inner > .nav-cta {
+        display: none;
+      }
+
+      /* Dropdown panel */
       .nav-links {
         display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        right: 0;
+        flex-direction: column;
+        background: rgba(5, 5, 7, 0.99);
+        border-top: 1px solid rgba(200, 150, 62, 0.15);
+        border-bottom: 1px solid rgba(200, 150, 62, 0.15);
+        padding: 0;
+        gap: 0;
+        z-index: 100;
+      }
+
+      .nav-links.is-open {
+        display: flex;
+      }
+
+      /* Regular nav items — block rows */
+      .nav-links li:not(.nav-mobile-cta-item) a {
+        display: block;
+        padding: 15px 24px;
+        font-size: 11px;
+        border-bottom: 1px solid rgba(200, 150, 62, 0.07);
+      }
+
+      /* CTA row — show it and give breathing room */
+      .nav-mobile-cta-item {
+        display: list-item;
+        padding: 20px 24px;
       }
 
       .hero {
@@ -1418,14 +1500,28 @@
     <div class="nav-inner">
       <a href="#" class="nav-logo" aria-label="Anna Sokólska — strona główna">Anna Sokólska</a>
       <nav aria-label="Nawigacja główna">
-        <ul class="nav-links">
+        <ul class="nav-links" id="nav-links-menu">
           <li><a href="#o-mnie">O mnie</a></li>
           <li><a href="#osiagniecia">Osiągnięcia</a></li>
           <li><a href="#pokazy">Pokazy</a></li>
           <li><a href="#rekord">Szkolenia</a></li>
           <li><a href="#kontakt">Kontakt</a></li>
+          <li class="nav-mobile-cta-item">
+            <a href="#kontakt" class="nav-cta">Zarezerwuj Pokaz</a>
+          </li>
         </ul>
       </nav>
+      <button
+        class="nav-hamburger"
+        id="nav-hamburger"
+        aria-label="Otwórz menu"
+        aria-expanded="false"
+        aria-controls="nav-links-menu"
+      >
+        <span class="nav-hamburger-bar"></span>
+        <span class="nav-hamburger-bar"></span>
+        <span class="nav-hamburger-bar"></span>
+      </button>
       <a href="#kontakt" class="nav-cta">Zarezerwuj Pokaz</a>
     </div>
   </header>
@@ -1923,6 +2019,42 @@
 
       window.addEventListener('scroll', onScroll, { passive: true });
       onScroll();
+    })();
+
+    // Mobile navigation toggle
+    (function () {
+      const hamburger = document.getElementById('nav-hamburger');
+      const menu      = document.getElementById('nav-links-menu');
+
+      if (!hamburger || !menu) return;
+
+      function openMenu() {
+        menu.classList.add('is-open');
+        hamburger.classList.add('is-open');
+        hamburger.setAttribute('aria-expanded', 'true');
+        hamburger.setAttribute('aria-label', 'Zamknij menu');
+      }
+
+      function closeMenu() {
+        menu.classList.remove('is-open');
+        hamburger.classList.remove('is-open');
+        hamburger.setAttribute('aria-expanded', 'false');
+        hamburger.setAttribute('aria-label', 'Otwórz menu');
+      }
+
+      hamburger.addEventListener('click', function () {
+        menu.classList.contains('is-open') ? closeMenu() : openMenu();
+      });
+
+      // Close when any link inside the menu is clicked
+      menu.querySelectorAll('a').forEach(function (link) {
+        link.addEventListener('click', closeMenu);
+      });
+
+      // Close on Escape
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && menu.classList.contains('is-open')) closeMenu();
+      });
     })();
 
     // Pause marquee on hover (accessibility)
